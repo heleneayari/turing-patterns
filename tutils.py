@@ -9,11 +9,9 @@ import numpy as np
 class BaseStateSystem:
     """
     Base object for "State System".
-
     We are going to repeatedly visualise systems which are Markovian:
     the have a "state", the state evolves in discrete steps, and the next
     state only depends on the previous state.
-
     To make things simple, I'm going to use this class as an interface.
     """
     def __init__(self):
@@ -44,7 +42,7 @@ class BaseStateSystem:
             self.draw(ax)
 
         anim = animation.FuncAnimation(fig, step, frames=np.arange(n_steps), interval=20)
-        anim.save(filename=filename, dpi=60, fps=10, writer='imagemagick')
+        anim.save(filename=filename, dpi=60, fps=10, writer='html')
         plt.close()
         
     def plot_evolution_outcome(self, filename, n_steps):
